@@ -1,7 +1,12 @@
 ---
 title: "About Me"
-output: html_document
-theme: cerulean
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+editor_options: 
+  chunk_output_type: console
+  self_contained: true
 ---
 
 <style type="text/css">
