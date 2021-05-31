@@ -9,20 +9,6 @@ editor_options:
   self_contained: true
 ---
 
-<style type="text/css">
-.title {
-  display: none;
-}
-
-#getting-started img {
-  margin-right: 10px;
-}
-
-</style>
-
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
-
 ![](images/profile_pic.png)
 
 # **Hi, I'm Keragan!**
