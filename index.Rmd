@@ -20,7 +20,6 @@ output: html_document
 </style>
 
 <div class="container-fluid">
-<div class="row" style="padding-top: 10px;">
 <div class="col-sm-6">
 
 ![](images/profile_pic.png)
