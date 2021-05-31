@@ -4,12 +4,12 @@ navbar:
   left:
     - text: "About Me"
       href: index.html
+    - text: "My Background"
+      href: Links.html
     - text: "Project 1"
       href: rrad_portfolio.html
-    - text: "Links"
-      href: Links.html
 output_dir: "docs"
 output:
   html_document:
     theme: journal
-    highlight: espresso
+    highlight: haddock

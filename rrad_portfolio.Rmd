@@ -107,7 +107,7 @@ glimpse(rrad_data)
 **Days Spent in the District Each Month**
 ```{r message=FALSE}
 ggplot(rrad_data, aes(x=days_spent_here_month)) +
-  geom_histogram(fill="#055C9D") + 
+  geom_histogram(fill="#26213F") + 
   theme_classic() +
   xlab("Days Spent in the District") +
   ylab("Number of Respondents") +
@@ -160,7 +160,7 @@ d_art <- data.frame(word = names(v_art), freq=v_art)
 ```
 
 ```{r echo=FALSE}
-wordcloud2(data = d_art, size = 1.6, color = "#055C9D")
+wordcloud2(data = d_art, size = 1.6, color = "#26213F")
 ```
 
 
@@ -184,7 +184,7 @@ rrad_data <- rrad_data %>%
 Visualize sentiment scores:
 ```{r message=FALSE, warning=FALSE}
 ggplot(rrad_data, aes(x=ave_sentiment)) +
-  geom_histogram(fill = '#055C9D') + 
+  geom_histogram(fill = '#26213F') + 
   theme_classic() +
   xlab("Average Sentiment") +
   ylab("Number of Respondents") +
@@ -229,7 +229,7 @@ rrad_data %>%
 Removed 273 respondents because they didn't complete the 'What is Art to You' question, so need to look at graph of Days Spent in the District with the condensed sample size:
 ```{r message=FALSE}
 ggplot(rrad_data, aes(x=days_spent_here_month)) +
-  geom_histogram(fill="#055C9D") + 
+  geom_histogram(fill="#26213F") + 
   theme_classic() +
   xlab("Days Spent in the District") +
   ylab("Number of Respondents") +
@@ -241,7 +241,7 @@ ggplot(rrad_data, aes(x=days_spent_here_month)) +
 Visualize relationship between days spent in the district and sentiment in 'What is Art to You' responses:
 ```{r}
 ggplot(rrad_data, aes(days_spent_here_month, ave_sentiment)) +
-  geom_point(color = '#055C9D') +
+  geom_point(color = '#26213F') +
   theme_classic() + 
   xlab("Number of Days Spent in District Each Month") +
   ylab("Average Sentiment in Art Reflections") +
