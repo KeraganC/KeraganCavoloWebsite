@@ -23,6 +23,8 @@ editor_options:
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
+![](images/profile_pic.png)
+
 # **Hi, I'm Keragan!**
 
 Human potential knows no bounds. Mounds of research support that humans are resilient, capable, and malleable. Psychology, health & well-being, and self-actualization have always captivated me. 
