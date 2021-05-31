@@ -109,9 +109,7 @@ glimpse(rrad_data)
 ggplot(rrad_data, aes(x=days_spent_here_month)) +
   geom_histogram(fill="#26213F") + 
   theme_classic() +
-  xlab("Days Spent in the District") +
-  ylab("Number of Respondents") +
-  ggtitle("Fig. A: Days Spent in the District Each Month (N = 1081)")
+  labs(x = "Days Spent in the District", y = "Number of Respondents", title = "Fig. A: Days Spent in the District Each Month (N = 1081)")
 ```
 
 *Note: may need to transform due to non-normal distribution*
@@ -186,9 +184,7 @@ Visualize sentiment scores:
 ggplot(rrad_data, aes(x=ave_sentiment)) +
   geom_histogram(fill = '#26213F') + 
   theme_classic() +
-  xlab("Average Sentiment") +
-  ylab("Number of Respondents") +
-  ggtitle("Fig. C: Sentiment Present in 'What is Art to You' Responses (n = 808)")
+  labs(x = "Average Sentiment", y = "Number of Respondents", title = "Fig. C: Sentiment Present in 'What is Art to You' Responses (n = 808)")
 ```
 
 *Highly skewed - Many responses contained zero sentiment, with remaining appearing to be mostly positive.*
@@ -231,9 +227,7 @@ Removed 273 respondents because they didn't complete the 'What is Art to You' qu
 ggplot(rrad_data, aes(x=days_spent_here_month)) +
   geom_histogram(fill="#26213F") + 
   theme_classic() +
-  xlab("Days Spent in the District") +
-  ylab("Number of Respondents") +
-  ggtitle("Fig. D: Days Spent in the District Each Month (n = 808)")
+  labs(x = "Days Spent in the District", y = "Number of Respondents", title = "Fig. D: Days Spent in the District Each Month (n = 808)")
 ```
 
 *Not noticeably different from whole sample.*
@@ -244,9 +238,7 @@ Visualize relationship between days spent in the district and sentiment in 'What
 ggplot(rrad_data, aes(days_spent_here_month, ave_sentiment)) +
   geom_point(color = '#26213F') +
   theme_classic() + 
-  xlab("Number of Days Spent in District Each Month") +
-  ylab("Average Sentiment in Art Reflections") +
-  ggtitle("Fig. E: Days Spent in the District Versus and Feelings about Art")
+  labs(title = "Fig. E: Days Spent in the District Versus and Feelings about Art", x = "Number of Days Spent in District Each Month", y = "Average Sentiment in Art Reflections")
 ```
 
 *Based on this graph, there does not appear to be a relationship between days spent in the district and average sentiment in individuals' reflections of what art is to them.*

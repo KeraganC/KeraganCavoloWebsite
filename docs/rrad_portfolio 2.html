@@ -529,7 +529,8 @@ $(document).ready(function () {
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Days Spent in the District&quot;</span>) <span class="sc">+</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Respondents&quot;</span>) <span class="sc">+</span></span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Fig. D: Days Spent in the District Each Month (n = 808)&quot;</span>)</span></code></pre></div>
-<p><img src="rrad_portfolio_files/figure-html/unnamed-chunk-26-1.png" width="672" /> <em>Not noticeably different from whole sample.</em></p>
+<p><img src="rrad_portfolio_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><em>Not noticeably different from whole sample.</em></p>
 <p>Visualize relationship between days spent in the district and sentiment in ‘What is Art to You’ responses:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rrad_data, <span class="fu">aes</span>(days_spent_here_month, ave_sentiment)) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&#39;#26213F&#39;</span>) <span class="sc">+</span></span>
