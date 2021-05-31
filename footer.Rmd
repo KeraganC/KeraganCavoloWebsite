@@ -1,0 +1,25 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+&nbsp;
+<hr />
+<p style="text-align: center;">Created by <a href="https://github.com/holtzy/">Keragan Cavolo</a></p>
+<p style="text-align: center;"><span style="color: #808080;"><em>keragan.cavolo@gmail.com</em></span></p>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://twitter.com/keragancavolo" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/in/keragancavolo/" class="fa fa-linkedin"></a>
+    <a href="https://github.com/KeraganC" class="fa fa-github"></a>
+</p>
+
+&nbsp;

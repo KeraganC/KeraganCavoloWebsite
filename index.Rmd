@@ -1,7 +1,18 @@
 ---
-title: ""
+title: "Keragan Cavolo Portfolio - About Me"
 output: html_document
 ---
+
+<style type="text/css">
+.title {
+  display: none;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
 
 ![](images/banner2.png)
 
