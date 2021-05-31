@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <center>
-![Roosevelt Row Arts District - Photo Taken by Danny Upshaw](/Users/keragancavolo/Documents/Learning R/Github Pages/KeraganCavoloWebsite/images/rrad_pic.png)
+![Roosevelt Row Arts District - Photo Taken by Danny Upshaw](images/rrad_pic.png)
 </center>
 ###### Roosevelt Row Arts District - Photo Taken by Danny Upshaw
 
