@@ -14,8 +14,9 @@ output: html_document
 
 </style>
 
+<div class="container-fluid">
 <div class="row" style="padding-top: 10px;">
-<div class="col-sm-3 col-md-6 col-lg-4">
+<div class="col-sm-6">
 
 ![](images/profile_pic.png)
 
@@ -38,7 +39,7 @@ In each tab, you will see different data analytics projects that I have done. So
 Email Me: keragan.cavolo@gmail.com
 
 </div>
-<div class="col-sm-3 col-md-6 col-lg-4">
+<div class="col-sm-6">
 
 </a>
 </div>
