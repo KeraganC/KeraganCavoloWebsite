@@ -5,7 +5,7 @@ navbar:
     - text: "About Me"
       href: index.html
     - text: "Project 1"
-      href: rrad_portfolio_project_05-2021.html
+      href: rrad_portfolio.html
     - text: "Links"
       href: Links.html
 output_dir: "docs"
