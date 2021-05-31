@@ -1,11 +1,11 @@
 ---
-title: "Resources"
+title: "My Background"
 output: html_document
 ---
-
-### My Background!
 
 
 ```{r, fig.align="center", fig.cap=c("Resume"), echo=FALSE}
 knitr::include_graphics("images/resume.pdf")
 ```
+
+[Resume Link](https://www.canva.com/design/DAEfneBAdFI/HBajED2uyuB4Gs1C3AR39w/view?utm_content=DAEfneBAdFI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)

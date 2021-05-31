@@ -1,11 +1,11 @@
 ---
-title: "About Me"
+title: ""
 output: html_document
 ---
 
-![](images/banner1.png)
+![](images/banner2.png)
 
-# **Hi, I'm Keragan!**
+------------------
 
 Human potential knows no bounds. Mounds of research support that humans are resilient, capable, and malleable. Psychology, health & well-being, and self-actualization have always captivated me. 
 
@@ -17,7 +17,7 @@ A need for continuous growth is central to my success and sanity. I have grown m
 
 ## This Website
 
-In each tab, you will see different data analytics projects that I have done. Some professional, some just for fun! Feel free to explore and reach out to me if you want to connect!
+In each tab, you will see different data analytics projects I have done - some professional, some just for fun! Feel free to explore and reach out to me if you would like to connect!
 
 ------------------
 
