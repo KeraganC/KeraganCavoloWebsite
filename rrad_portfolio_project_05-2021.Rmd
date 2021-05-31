@@ -1,0 +1,293 @@
+---
+title: "A Brief Exploration of the Roosevelt Row Arts District"
+author: "Keragan Cavolo"
+date: "5/29/2021"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<center>
+![Roosevelt Row Arts District - Photo Taken by Danny Upshaw](/Users/keragancavolo/Documents/RRAD Survey/Data/rrad_pic.png)
+</center>
+###### Roosevelt Row Arts District - Photo Taken by Danny Upshaw
+
+
+## Project Background
+
+I served as a consulting data analyst on a project exploring the Roosevelt Row Arts District (rrad) in Phoenix, Arizona. The goal of this project was to survey community members (e.g., residents, artists, business owners, employees, and visitors of the district) to get an understanding of how they interact with and feel about art and the district. The ultimate goal was to leverage data to drive future decisions regarding funding district wide programs and elevating the artist experience. For more on the district see <https://www.rooseveltrow.org>.
+
+## This Document and The Dataset
+
+For the purpose of this project, I will be using a subset of the rrad dataset. I have already cleaned this dataset (e.g., removed duplicates and individuals with missing data in what were deemed as necessary sections of the survey). Myself and two consultants designed the survey in March 2021. The data were collected via Survey Monkey in April 2021. The total sample size was **N = 1081**. As the dataset does not belong to me, it will not be publicly available, but I have received permission to use it for this project. 
+
+### Variables of interest
+
+We asked a variety of questions, including demographics, feelings about art, how they interact with the district, what their role in the district is (e.g., artist, resident, employee, business owner, visitor, or some combination of the above), and user-specific questions (e.g., for residents, how they feel about living in the district, how artists feel about creating art in the district, etc.). For this project, I will be including the following variables:
+
+* Number of days spent in the district each month (Integer)
+* What is art to you? (Character)
+
+### Questions of Interest
+
+I am curious about the relationship between the number of days people spend in the district and their positive/negative feelings about art.
+
+* Do people who spend more time in the arts district have more positive sentiment present in their written reflections about art? (rationale: It could be reasoned that people who spend more time in an arts district do so because they have more positive feelings about art.)
+
+*Note: We cannot infer causality - The goal is to simply explore the relationship between these variables.*
+
+### Overview of Analyses
+
+To explore this question, I conduct the following analyses:
+
+* Explore distributions of variables
+* Sentiment Analysis of written reflections (What is art to you?)
+* Correlation between art sentiment and days spent in district
+
+## Load Packages
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(tm)
+library(wordcloud2)
+library(sentimentr)
+library(tidytext)
+library(tidyr)
+```
+
+
+## Prepare the Data 
+
+
+First, I read in the whole dataset:
+```{r}
+rrad_data <- read.csv('/Users/keragancavolo/Documents/RRAD Survey/Data/rrad_data_cleaned_v02.csv')
+```
+
+
+Next, I select the columns corresponding to my variables of interest from the main dataset:
+```{r}
+rrad_data <- rrad_data %>%
+  select(respondent_id, role_in_district, days_spent_here_month, art_to_you)
+```
+
+
+Glimpse at the resulting dataframe:
+```{r}
+glimpse(rrad_data)
+```
+
+### Fix Data Types
+
+
+Role_in_district will need to be changed to factor:
+```{r echo=T, results='hide'}
+rrad_data$role_in_district <- as.factor(rrad_data$role_in_district)
+```
+
+
+Respondent_id will need to be changed to character data type:
+```{r echo=T, results='hide'}
+rrad_data$respondent_id <- as.character(rrad_data$respondent_id)
+```
+
+
+Check that data types were successfully changed:
+```{r}
+glimpse(rrad_data) 
+```
+
+
+## Visualize the Data
+
+
+**Days Spent in the District Each Month**
+```{r message=FALSE}
+ggplot(rrad_data, aes(x=days_spent_here_month)) +
+  geom_histogram(fill="#008080") + 
+  theme_classic() +
+  xlab("Days Spent in the District") +
+  ylab("Number of Respondents") +
+  ggtitle("Fig. A: Days Spent in the District Each Month (N = 1081)")
+```
+
+*Note: may need to transform due to non-normal distribution*
+
+
+
+**Fig. B: What is Art to You? (n = 808)**
+
+```{r include=FALSE}
+art <- rrad_data %>%
+  select(respondent_id, art_to_you) #Create new dataframe with respondent_id and art to you responses
+```
+
+```{r include=FALSE}
+art <- art %>%
+  filter(!is.na(art_to_you)) #Remove NAs
+```
+
+```{r include=FALSE}
+art_corpus <- Corpus(VectorSource(art$art_to_you)) #Convert responses to vector
+```
+```{r include=FALSE}
+art_corpus <- tm_map(art_corpus, content_transformer(tolower)) #Convert text to lower case
+```
+```{r include=FALSE}
+art_corpus <- tm_map(art_corpus, removeWords, stopwords("english")) #Remove stopwords
+```
+```{r include=FALSE}
+art_corpus <- art_corpus %>%
+  tm_map(removeNumbers) %>% #Remove numbers
+  tm_map(removePunctuation) %>% #Remove punctuation
+  tm_map(stripWhitespace) #Remove extra white space
+```
+```{r include=FALSE}
+tdm_art <- TermDocumentMatrix(art_corpus) #Create term document matrix which counts frequency of terms, then data frame
+```
+
+```{r include=FALSE}
+m_art <- as.matrix(tdm_art) 
+```
+```{r include=FALSE}
+v_art <- sort(rowSums(m_art), decreasing=TRUE)
+```
+```{r include=FALSE}
+d_art <- data.frame(word = names(v_art), freq=v_art)
+```
+
+```{r echo=FALSE}
+wordcloud2(data = d_art, size = 1.6, color = "#008080")
+```
+
+
+
+## Sentiment Analysis
+
+
+Obtain average sentiment score for each individuals' reflection of what art is to them:
+```{r message=FALSE, warning=FALSE}
+rrad_data <- rrad_data %>%
+  mutate(sentiment_by(rrad_data$art_to_you))
+```
+
+
+Remove respondents who did not answer the 'What is Art to You' question, so they will not be assigned as 0 sentiment:
+```{r}
+rrad_data <- rrad_data %>%
+  filter(!is.na(art_to_you))
+```
+
+Visualize sentiment scores:
+```{r message=FALSE, warning=FALSE}
+ggplot(rrad_data, aes(x=ave_sentiment)) +
+  geom_histogram(fill = '#008080') + 
+  theme_classic() +
+  xlab("Average Sentiment") +
+  ylab("Number of Respondents") +
+  ggtitle("Fig. C: Sentiment Present in 'What is Art to You' Responses (n = 808)")
+```
+
+*Highly skewed - Many responses contained zero sentiment, with remaining appearing to be mostly positive.*
+*Note: 0 = no sentiment, >0 = positive sentiment, <0 = negative sentiment.*
+
+Explore summary statistics for average sentiment variable:
+```{r message=FALSE, warning=FALSE}
+summary(rrad_data$ave_sentiment)
+```
+*Large max suggests presence of outlier(s).*
+
+
+
+Explore the breakdown of positive, negative, and 0 sentiment in responses by creating a new column that categorizes the average sentiment scores into negative, none, and positive:
+```{r}
+rrad_data <- rrad_data %>%
+  mutate(sentiment_category = case_when(ave_sentiment == 0.00000000 ~ 'none', #If sentiment == 0, categorize as none
+         ave_sentiment > 0 ~ 'positive', #If sentiment is > 0, categorize as positive
+         ave_sentiment < 0 ~ 'negative')) #If sentiment is < 0, categorize as negative
+```
+
+
+Get number of number of responses for each sentiment category:
+```{r}
+rrad_data %>%
+  count(sentiment_category)
+```
+*Mostly positive sentiment (70%).*
+
+
+
+## Correlation Analysis
+
+
+### Check Assumptions
+
+
+Removed 273 respondents because they didn't complete the 'What is Art to You' question, so need to look at graph of Days Spent in the District with the condensed sample size:
+```{r message=FALSE}
+ggplot(rrad_data, aes(x=days_spent_here_month)) +
+  geom_histogram(fill="#008080") + 
+  theme_classic() +
+  xlab("Days Spent in the District") +
+  ylab("Number of Respondents") +
+  ggtitle("Fig. D: Days Spent in the District Each Month (n = 808)")
+```
+*Not noticeably different from whole sample.*
+
+
+Visualize relationship between days spent in the district and sentiment in 'What is Art to You' responses:
+```{r}
+ggplot(rrad_data, aes(days_spent_here_month, ave_sentiment)) +
+  geom_point(color = '#008080') +
+  theme_classic() + 
+  xlab("Number of Days Spent in District Each Month") +
+  ylab("Average Sentiment in Art Reflections") +
+  ggtitle("Fig. E: Days Spent in the District Versus and Feelings about Art")
+```
+
+*Based on this graph, there does not appear to be a relationship between days spent in the district and average sentiment in individuals' reflections of what art is to them.*
+
+
+### Spearman Rho Correlation
+
+The figures above demonstrate non-linearity, a high level of skewness in both variables, and potential outliers in the average sentiment variable. As such, I will use the Spearman rho correlation as it is robust against outliers and high skew. However, based on Figure D., I am not expecting a significant correlation.
+
+Run the Spearman Rho Correlation Test
+```{r}
+cor.test(rrad_data$days_spent_here_month, rrad_data$ave_sentiment, method = 'spearman', exact = FALSE)
+```
+
+*It appears that the number of days spent in the district and sentiment from respondents' art reflections are not related (rho = -0.04).*
+
+
+## Limitations
+
+* The vast majority of responses to the 'What is Art to You' question contained 0 sentiment. The nature of this question could be one reason why there was no evidence of a relationship between the number of days spent in the district and sentiment. Specifically, we did not ask respondents how they feel about art, but rather what it means to them. Perhaps if worded differently, there might have been a greater presence of sentiment. 
+
+
+
+## Resources
+
+Here are links to resources I used for creating this RMarkdown:
+
+[Pimp my RMD: a few tips for R Markdown](https://holtzy.github.io/Pimp-my-rmd/#text_formating)
+
+[Creating Pretty Documents From R Markdown](https://prettydoc.statr.me/index.html)
+
+
+
+
+### Session Info
+
+```{r echo=FALSE}
+sessionInfo()
+```
+

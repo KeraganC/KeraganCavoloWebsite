@@ -1,5 +1,5 @@
 ---
-title: "Keragan test"
+title: "About Me"
 output: html_document
 ---
 
@@ -17,9 +17,13 @@ output: html_document
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
-# **My Lab Journal**
+# **Hi, I'm Keragan!**
 
-This is a template example for lab journaling. Students in Matt Crump's Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.
+Human potential knows no bounds. Mounds of research support that humans are resilient, capable, and malleable. Psychology, health & well-being, and self-actualization have always captivated me. 
+
+I am motivated by data-driven insights. My passion is to bridge the gap between data and health & wellness. I want to push forward individual, organizational, and community health & well-being through the power of data storytelling, visualization, and actionable insights. 
+
+A need for continuous growth is central to my success and sanity. I have grown my skills in research, data analytics, leadership, collaboration, social media management, writing, and speaking. In my spare time, you can find me taking an online course to enhance my technical skills, listening to data analytics and psychology podcasts, or reading.
 
 ## How to use
 

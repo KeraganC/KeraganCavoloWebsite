@@ -1,11 +1,11 @@
-name: "Keragan Cavolo"
+name: "Keragan Cavolo Portfolio"
 navbar:
-  title: "Keragan Cavolo"
+  title: "Keragan Cavolo Portfolio"
   left:
-    - text: "Home"
+    - text: "About Me"
       href: index.html
-    - text: "Portfolio"
-      href: Portfolio.html
+    - text: "Project 1"
+      href: rrad_portfolio_project_05-2021.html
     - text: "Links"
       href: Links.html
 output_dir: "docs"
