@@ -41,9 +41,5 @@ A need for continuous growth is central to my success and sanity. I have grown m
 </div>
 <div class="col-sm-6">
 
-### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io)
-
-<a href = "https://crumplab.github.io">
-![](images/logo.png)
 </a>
 </div>
