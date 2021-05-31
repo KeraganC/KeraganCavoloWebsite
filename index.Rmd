@@ -3,24 +3,6 @@ title: "About Me"
 output: html_document
 ---
 
-<style type="text/css">
-.title {
-  display: none;
-}
-
-
-.container {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right: 0px;
-    margin-left: 0px;
-    width: 100%;
-}
-
-</style>
-
-<div class="container-fluid">
-<div class="col-sm-6">
 
 ![](images/profile_pic.png)
 
@@ -41,9 +23,3 @@ In each tab, you will see different data analytics projects that I have done. So
 [LinkedIn](https://www.linkedin.com/in/keragancavolo/)
 
 Email Me: keragan.cavolo@gmail.com
-
-</div>
-<div class="col-sm-6">
-
-</a>
-</div>
