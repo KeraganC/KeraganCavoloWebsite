@@ -14,14 +14,20 @@ knitr::opts_chunk$set(echo = TRUE)
 </center>
 ###### Roosevelt Row Arts District - Photo Taken by Danny Upshaw
 
+<br>
 
 ## Project Background
 
 I served as a consulting data analyst on a project exploring the Roosevelt Row Arts District (rrad) in Phoenix, Arizona. The goal of this project was to survey community members (e.g., residents, artists, business owners, employees, and visitors of the district) to get an understanding of how they interact with and feel about art and the district. The ultimate goal was to leverage data to drive future decisions regarding funding district wide programs and elevating the artist experience. For more on the district see <https://www.rooseveltrow.org>.
 
+<br>
+
 ## This Document and The Dataset
 
 For the purpose of this project, I will be using a subset of the rrad dataset. I have already cleaned this dataset (e.g., removed duplicates and individuals with missing data in what were deemed as necessary sections of the survey). Myself and two consultants designed the survey in March 2021. The data were collected via Survey Monkey in April 2021. The total sample size was **N = 1081**. As the dataset does not belong to me, it will not be publicly available, but I have received permission to use it for this project. 
+
+<br>
+
 
 ### Variables of interest
 
@@ -29,6 +35,8 @@ We asked a variety of questions, including demographics, feelings about art, how
 
 * Number of days spent in the district each month (Integer)
 * What is art to you? (Character)
+
+<br>
 
 ### Questions of Interest
 
@@ -38,6 +46,8 @@ I am curious about the relationship between the number of days people spend in t
 
 *Note: We cannot infer causality - The goal is to simply explore the relationship between these variables.*
 
+<br>
+
 ### Overview of Analyses
 
 To explore this question, I conduct the following analyses:
@@ -45,6 +55,8 @@ To explore this question, I conduct the following analyses:
 * Explore distributions of variables
 * Sentiment Analysis of written reflections (What is art to you?)
 * Correlation between art sentiment and days spent in district
+
+<br>
 
 ## Load Packages
 
@@ -58,6 +70,7 @@ library(tidytext)
 library(tidyr)
 ```
 
+<br>
 
 ## Prepare the Data 
 
@@ -80,6 +93,8 @@ Glimpse at the resulting dataframe:
 glimpse(rrad_data)
 ```
 
+<br>
+
 ### Fix Data Types
 
 
@@ -100,9 +115,11 @@ Check that data types were successfully changed:
 glimpse(rrad_data) 
 ```
 
+<br>
 
 ## Visualize the Data
 
+<br>
 
 **Days Spent in the District Each Month**
 ```{r message=FALSE}
@@ -114,7 +131,7 @@ ggplot(rrad_data, aes(x=days_spent_here_month)) +
 
 *Note: may need to transform due to non-normal distribution*
 
-
+<br>
 
 **Fig. B: What is Art to You? (n = 808)**
 
@@ -162,6 +179,7 @@ wordcloud2(data = d_art, size = 1.6, color = "#26213F")
 ```
 
 
+<br>
 
 ## Sentiment Analysis
 
@@ -214,7 +232,7 @@ rrad_data %>%
 ```
 *Mostly positive sentiment (70%).*
 
-
+<br>
 
 ## Correlation Analysis
 
@@ -243,6 +261,7 @@ ggplot(rrad_data, aes(days_spent_here_month, ave_sentiment)) +
 
 *Based on this graph, there does not appear to be a relationship between days spent in the district and average sentiment in individuals' reflections of what art is to them.*
 
+<br><br>
 
 ### Spearman Rho Correlation
 
@@ -255,12 +274,20 @@ cor.test(rrad_data$days_spent_here_month, rrad_data$ave_sentiment, method = 'spe
 
 *It appears that the number of days spent in the district and sentiment from respondents' art reflections are not related (rho = -0.04).*
 
+<br><br>
 
-## Limitations
+## Key Takeaways and Limitations
 
+The original thought process was that the more days individuals spend in the arts district, the more positive sentiment there would be in their reflections of what art is to them. The results demonstrate that the number of days spent in the district appears to be unrelated to how respondents feel about art (per the sentiment in their reflections). A few considerations follow:
+
+* Perhaps, the majority of people spend time in the district for other types of reasons (e.g., restaurants, night life).
+ 
 * The vast majority of responses to the 'What is Art to You' question contained 0 sentiment. The nature of this question could be one reason why there was no evidence of a relationship between the number of days spent in the district and sentiment. Specifically, we did not ask respondents how they feel about art, but rather what it means to them. Perhaps if worded differently, there might have been a greater presence of sentiment. 
+  
+* Selection bias is likely at play - people who completed this survey care about the district and likely already hold positive or neutral feelings about art. Also, it could be that people in general don't hold negative feelings toward art.
 
 
+<br><br>
 
 ## Resources
 
@@ -271,6 +298,7 @@ Here are links to resources I used for creating this RMarkdown:
 [Creating Pretty Documents From R Markdown](https://prettydoc.statr.me/index.html)
 
 
+<br><br><br>
 
 
 ### Session Info
