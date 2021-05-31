@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 output: html_document
+theme: cerulean
 ---
 
 <style type="text/css">
