@@ -235,6 +235,7 @@ ggplot(rrad_data, aes(x=days_spent_here_month)) +
   ylab("Number of Respondents") +
   ggtitle("Fig. D: Days Spent in the District Each Month (n = 808)")
 ```
+
 *Not noticeably different from whole sample.*
 
 
