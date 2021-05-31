@@ -8,6 +8,7 @@ output:
     highlight: github
 editor_options: 
   chunk_output_type: console
+  self_contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -292,11 +293,5 @@ sessionInfo()
 ```
 
 
-```{r}
-library(knitr)
-library(rmarkdown)
 
-render("rrad_portfolio_project_05-2021.Rmd", html_document(pandoc_args = "--self-contained"))
-browseURL("rrad_portfolio_project_05-2021.html")
-```
 
