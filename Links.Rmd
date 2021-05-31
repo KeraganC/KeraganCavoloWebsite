@@ -3,7 +3,7 @@ title: "My Background"
 output: html_document
 ---
 
-<br><br><br><br>
+<br>
 
 
 ```{r, fig.align="center", fig.cap=c("Resume"), echo=FALSE}
