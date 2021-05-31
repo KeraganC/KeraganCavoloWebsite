@@ -11,5 +11,5 @@ navbar:
 output_dir: "docs"
 output:
   html_document:
-    theme: darkly
-    highlight: espresso
+    theme: journal
+    highlight: monochrome

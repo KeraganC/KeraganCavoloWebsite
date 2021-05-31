@@ -3,8 +3,7 @@ title: "About Me"
 output: html_document
 ---
 
-
-![](images/profile_pic.png)
+![](images/banner1.png)
 
 # **Hi, I'm Keragan!**
 
@@ -14,9 +13,13 @@ I am motivated by data-driven insights. My passion is to bridge the gap between 
 
 A need for continuous growth is central to my success and sanity. I have grown my skills in research, data analytics, leadership, collaboration, social media management, writing, and speaking. In my spare time, you can find me taking an online course to enhance my technical skills, listening to data analytics and psychology podcasts, or reading.
 
+------------------
+
 ## This Website
 
 In each tab, you will see different data analytics projects that I have done. Some professional, some just for fun! Feel free to explore and reach out to me if you want to connect!
+
+------------------
 
 ## Let's Connect
 
