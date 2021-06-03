@@ -28,7 +28,7 @@ A need for continuous growth is central to my success and sanity. I have grown m
 
 ## This Website
 
-In each tab, you will see different data analytics projects I have done - some professional, some just for fun! Feel free to explore and reach out to me if you would like to connect!
+As I develop my portfolio, each tab will comprise different data analytics projects I have done - some professional, some just for fun! For now, I have one project. However, I created this website using Rmarkdown and Github Pages, so consider this to be a project as well. Feel free to explore and reach out to me if you would like to connect!
 
 ------------------
 
