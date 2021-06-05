@@ -8,7 +8,8 @@ navbar:
       href: Links.html
     - text: "Project 1"
       href: rrad_portfolio.html
-output_dir: "docs"
+    - text: "Dashboard 1"
+output_dir: "dashboard_1.html"
 output:
   html_document:
     theme: journal
