@@ -1,10 +1,14 @@
 ---
-title: "Dashboard 1"
+title: "Demographic Breakdown of the Roosevelt Row Arts District"
 output: html_document
 ---
 
-<br>
+------------------
+## Background
 
+I created this dashboard using a subset of the Roosevelt Row Arts District dataset that I used to in Project 1 of this portfolio. For the purpose of this dashboard I included respondents who categorized themselves as *only* artists, residents, or visitors. Thus, I leave out a large number of people who were a combination of these (e.g., residents AND artists). I did this so I would be able to compare across independent groups using a filter for this dashboard. 
+
+<br>
 
 <iframe src="https://public.tableau.com/views/ThePeopleoftheRooseveltRowArtsDistrict/Dashboard1?:showVizHome=no&:embed=true"
  width="645" height="955"></iframe>
