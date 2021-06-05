@@ -14,13 +14,22 @@
 
 <title>A Brief Exploration of the Roosevelt Row Arts District</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="site_libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
@@ -38,7 +47,14 @@
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -121,39 +137,8 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 
@@ -164,10 +149,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -184,40 +165,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -245,7 +199,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -257,7 +211,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -268,10 +222,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -283,7 +250,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -376,7 +342,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -488,8 +454,8 @@ $(document).ready(function () {
 <p><em>Note: may need to transform due to non-normal distribution</em></p>
 <p><br></p>
 <p><strong>Fig. B: What is Art to You? (n = 808)</strong></p>
-<div id="htmlwidget-b3c4ef9d3d10f5e39467" style="width:672px;height:480px;" class="wordcloud2 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b3c4ef9d3d10f5e39467">{"x":{"word":["art","expression","anything","creative","something","life","can","experience","way","created","community","form","creativity","self","makes","emotion","express","visual","music","human","someone","think","world","feel","culture","everything","create","people","artist","etc","murals","others","personal","’s","one","emotions","see","beauty","creation","thought","painting","like","beautiful","things","feeling","unique","person","medium","make","emotional","many","made","physical","forms","love","brings","different","creating","ideas","just","experiences","good","feelings","thoughts","senses","new","imagination","soul","whether","together","shared","public","live","allows","dance","sculpture","artists","mind","individual","tangible","mediums","means","another","passion","performance","communication","sense","part","paintings","media","variety","idea","subjective","connect","ones","skill","connection","also","cultural","enjoy","time","ability","words","around","important","work","creates","place","everyone","expressed","opportunity","enjoyment","shows","theater","provides","food","photography","arts","performing","whatever","communicate","aesthetic","ways","body","comes","kind","without","expressions","evokes","talent","building","word","representation","humanity","freedom","response","expressing","bring","joy","thing","perspective","either","making","much","definition","oneself","reflection","define","looking","someones","value","first","stop","design","roosevelt","gives","process","happiness","interpretation","eyes","expresses","spoken","space","craft","inspires","selfexpression","heart","existence","seen","meant","moves","reaction","speak","helps","thinking","typically","works","piece","act","nothing","meaning","viewer","group","artistic","architecture","don’t","seeing","friday","sound","view","designed","purpose","vision","anyone","really","including","audience","show","necessary","jewelry","various","provoking","relax","experienced","hear","story","creatively","answer","goes","now","mundane","paint","need","use","depth","invokes","interesting","fashion","humans","outlet","mental","evoke","perfect","may","essential","happy","bad","want","lot","engaging","opportunities","escape","everyday","creations","broad","pleasure","touch","drawing","speaks","moment","done","invoke","home","spaces","look","sensory","visually","poetry","diverse","intended","inspiration","beliefs","defined","action","language","always","question","well","manifestation","put","beyond","manifested","objects","needs","right","speaking","spirit","explore","appreciation","within","add","color","give","dancing","items","used","power","’m","sparks","able","challenges","surroundings","therapy","interest","stirs","else","expressive","fine","watercolor","exploration","statements","boundaries","entire","behind","take","inner","call","special","work’","free","going","high","local","especially","eclectic","understand","creator","statement","relate","film","includes","connects","definitely","mural","phoenix","eye","enjoying","types","row","pleasing","takes","inside","inspire","groups","differently","chance","stories","vulnerability","nice","beer","cocktails","minds","sharing","buy","emotionally","auditory","conversation","exists","galleries","entertaining","concept","consumption","intention","sort","level","sculpting","events","entertainment","communities","know","intent","reality","can’t","reflect","social","truly","imagery","clothes","personally","smile","stimulates","one’s","individuals","exchange","impact","abstract","change","universal","lives","since","provocative","engagement","growth","almost","intellectual","treasure","sustenance","material","nature","someone’s","capitalism","injustices","racism","true","will","affects","musical","written","sacred","provide","interests","appreciated","existing","challenging","spark","alone","dialogue","category","extension","highly","relatable","belonging","collaborative","deeper","interact","character","consciousness","however","paper","limits","stimulate","crap","decay","water","long","context","discussion","outward","attention","book","contributes","distinction","honest","proposal","thoughtprovoking","‘work’","learning","away","buying","favorite","festivals","method","lifestyle","stimulation","elses","movement","great","invites","culinary","artifacts","become","uses","development","celebration","consumed","importantly","meaningless","sculptures","traditional","usually","belief","politics","holiness","taste","back","exhibits","gardens","parks","reflects","taken","ears","consideration","sees","identity","idealized","personality","experiencing","overall","concerts","meet","painters","park","sale","street","venues","combined","city","promote","following","bringing","drawings","happenings","outside","prints","enriches","admire","vibes","installations","type","beholder","audio","physically","intriguing","collectively","accessible","inspired","describes","endeavors","contemporary","aesthetics","passions","performances","pieces","provoke","present","short","ever","issues","appreciate","’re","interpret","wrong","cultures","else’s","individual’s","engage","observer","sewing","enhances","history","upon","tap","individuality","provokes","survey","viewpoints","crafts","perception","hands","explain","wonder","folks","mentally","experiential","pretty","livelihood","communicates","spiritual","exist","still","economic","quality","topic","please","displays","lol","persons","goods","message","believe","graffiti","changes","bar","places","small","solely","specific","stress","condition","wants","technique","breadth","economy","restaurants","big","society","though","try","clothing","livens","waves","job","catalyst","concepts","conduit","empathy","sensitivity","argue","changing","constantly","difficult","evolving","colors","impossible","seem","stimulating","minded","impart","life’s","certain","trigger","zeitgeist","perceive","based","photos","america","apart","basquiats","continue","diaz","doc","feelingsemotionsstrugglesexperiences","focused","goal","late","loudly","misogyny","obligation","oppression","real","safe","said","spend","strife","tear","teen","times","voice","years","forgotten","expands","collaboration","deep","knowing","projects","enrich","visuals","old","recycling","application","focus","hope","primarily","producing","build","strong","previously","career","second","cave","respite","represent","beautifies","deeply","pleasant","notice","willing","collective","god","gods","humanitys","pleases","allowed","masses","goodwill","moving","offering","completely","describe","aspect","awareness","bearable","elevates","enables","evolution","expansive","perspectives","potential","raise","shift","acrylic","botanicals","adventure","excited","exploring","imagine","offers","main","occupation","read","richness","aquarium","basketballs","disgust","epitomy","floating","full","half","ideally","longwinded","nostril","powerful","races","reason","seriously","snapshot","talented","three","tired","whole","wld","audibly","profession","togetherness","dialog","induce","communicating","modality","appropriately","better","breathtaking","care","dated","deserves","deserving","discard","encourages","extraordinary","fact","glaser","inception","inundated","landscape","milton","modest","name","poster","pushes","remains","replace","rug","say","sidewalk","simple","stencil","title","ugly","unfortunately","zero","‘art’","‘bad","‘good","‘great","conditionexperience","activity","innovative","consign","network","participate","cathartic","accept","ceramic","failures","greatness","growing","highest","joys","everyone’s","exhibitsmuseumsgalleriesconcerts","female","methods","potteryfilmmusic","preferred","school","walked","went","projected","adventures","immerse","patterns","digesting","finding","views","visualized","encores","stimuli","struggle","boring","best","points","amazement","gifts","beautify","income","presented","simply","thoughtfulness","decent","probably","examine","influence","artwork","basic","discovery","manifests","principles","suitable","alley","ambience","drink","location","restaurantbar","served","walls","consumes","easel","films","games","kept","participation","plays","video","emotionality","collect","hiking","passionate","happened","intentional","beautification","sensual","capable","creatives","installation","visible","feels","memory","candy","grant","promoting","watching","writing","talents","artsmusic","teacher","theatre","elicits","inspiring","euphoric","stepping","desire","actions","elicit","intentionally","open","performedcomposeddeveloped","authentic","thinks","iife","purposes","sometimes","aesthetically","communal","enjoyed","conveyed","matter","viewerparticipant","little","showcases","contemplate","experimental","dives","five","loud","measure","triggers","interactivity","verb","figure","replication","strengths","trying","weaknesses","merry","stay","tension","available","blowing","classes","displaying","fairs","glass","meetups","onsite","outdoor","rent","rooms","sawdust","studio","studios","tours","“checkout”","lived","result","lifeblood","reactions","involvement","private","utilizing","constraints","art—paintings","association","collages","dances","indulging","insides","photographs","poems","songs","trust","outsider","pushing","relations","religion","encompassing","muralsstreet","terms","anothers","personarea","uniqueness","cosmos","showing","knitting","stitching","doesn’t","metaphorically","individually","addition","fixed","beaded","musically","appeal","graphic","installed","sorts","garbage","imho","pretentious","weathered","mostly","break","norm","desires","external","internal","buildings","sides","broadest","creationmaking","critical","lead","selfreflection","dazzles","applies","future","gripping","past","representative","wildly","transports","evidence","natural","mode","lens","person’s","huge","putting","final","product","appealing","personalized","varying","observeconsumeenjoy","cool","corporate","“person”","ads","curated","landscaping","light","metro’s","obvious","rail","valley","wraps","attractive","critiques","heal","ponder","questions","engages","honestly","grounds","photograph","wether","conceptions","puts","education","multiculturalism","invention","item","enjoyable","monetary","require","transaction","output","values","play","effort","repetition","practice","intersection","object","viewersparticipants","discover","mission","southwest","skills","coming","sight","muralspaintings","aligned","prefer","simplify","concert","interactive","peoples","connections","educate","hopefully","inform","depend","redefine","voices","content","teaches","communicative","non","acting","infusing","might","numbers","original","realize","“art","comedy","aspirations","channelling","odd","resonate","commodity","format","production","multiple","embrace","knowledge","streets","whispers","bookmaking","circus","literary","print","storytelling","zines","“art”","encultured","equally","extent","parts","meets","draws","pour","floor","mail","thrown","environment","temperament","pointing","symbols","plane","portraying","sensations","spirits","displayed","mindfully","sake","fulfilling","motivates","articles","homemade","abstractions","smell","reacts","censorship","minus","include","persuasion","activities","artworks","author’s","engaged","imaginative","performed","range","technical","museums","artlink","arts”","borders","fulfill","function","maybe","move","palatable","popular","promoted","studiofine","thru","uncomfortable","wall","“","“instagrammable”","“pretty”","test","withstood","networking","appreciating","choice","additional","adds","placed","teaching","tend","therapeutic","fully","propels","components","comprised","factors","historical","informed","felt","sensation","six","transformed","shares","decoration","dimension","fantastic","scupture","consumer","feeds","least","prove","reverence","spiritually","strength","actually","deliberately","desert","exhibition","grouping","happens","irrelevant","museum","path","rocks","side","deem","expensive","interested","mean","preservingsaving","valuable","worth","pause","strongly","subject","commercial","common","firms","homes","evoking","visceral","yet","surprising","flowing","fuel","keep","cloned","touches","state","discussed","grabs","heck","colorful","seasoning","causes","admiring","inventive","theatrical","vehicle","force","messaging","communicationetc","solid","members","money","pornography","staring","conveys","awe","intangible","produce","erase","let’s","welcome","mindset","magic","justice","guest","reading","speakers","talking","current","designs","stale","across","limitless","day","everywhere","found","throughout","apartment","chooses","corner","happen","installs","longer","pushed","salon","already","area","displace","families","gentrifying","increase","neighborhoods","rents","respecting","businesses","supporting","hobbies","cheap","condos","dollar","flooded","market","relieve","get","pace","regulate","point","analysis","political","daily","savor","showcase","participant","atmosphere","awesome","hearing","comport","intellect","causing","motion","emotive","head","viewers","routine","consumerviewer","pov","center","detroit","grew","verbal","skillset","masse","promotes","dewey’s","theory","ecosystems","godhead","man","premiere","revealed","urban","influences","explores","surrounds","convey","monetarily","exposing","extraction","innermost","stuff","yknow","visualauditorysensory","bars","dynamic","mid","replaced","services","shops","supports","observers","inspirational","among","fit","friends","often","therefore","general","numerous","vibe","fingernails","matters","flowers","trees","deemed","dancepainting","sculpturesmusicfilms","freeing","inward","even","thoughtsfeelings","connecting","tissue","watch","companies","locals","nonlarge","posters","meaningful","case","cases","access","ask","everyones","example","immersive","key","liked","never","manner","purposeful","holds","significant","share","via","today","combination","given","instruments","interpretations","lyrical","materials","uplifting","formats","respectfully","infinite","nearly","taking","viewpoint","threw","oversized","plants","“potted”","fun","bonds","spread","higher","intellectually","simulates","assholes","bunch","entitled","night","walking","challenge","constructed","reconstructed","support","telling","college","degree","instrumental","related","stupid","display","genuine","tell","template","prevention","primary","thriving","composing","cooking","turn","behold","delight","wife","beings","hard","worked","flare","list","table","array","abundance","blocks","circle","continents","covid","devastating","harsh","hence","immediate","keeps","lost","moments","realities","struggles","tells","multi","life—food","treatment","influenced","dreams"],"freq":[322,251,101,85,85,71,57,51,46,45,42,42,40,40,40,35,33,33,32,31,30,30,30,28,27,25,24,24,24,24,24,23,23,23,22,22,22,21,21,19,19,18,18,18,17,16,16,16,15,15,15,15,14,14,14,14,14,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,11,11,11,11,11,11,11,11,11,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"#26213F","minSize":0,"weightFactor":0.894409937888199,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+<div id="htmlwidget-17d30e7cdcc7055b8e7e" style="width:672px;height:480px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-17d30e7cdcc7055b8e7e">{"x":{"word":["art","expression","anything","creative","something","life","can","experience","way","created","community","form","creativity","self","makes","emotion","express","visual","music","human","someone","think","world","feel","culture","everything","create","people","artist","etc","murals","others","personal","’s","one","emotions","see","beauty","creation","thought","painting","like","beautiful","things","feeling","unique","person","medium","make","emotional","many","made","physical","forms","love","brings","different","creating","ideas","just","experiences","good","feelings","thoughts","senses","new","imagination","soul","whether","together","shared","public","live","allows","dance","sculpture","artists","mind","individual","tangible","mediums","means","another","passion","performance","communication","sense","part","paintings","media","variety","idea","subjective","connect","ones","skill","connection","also","cultural","enjoy","time","ability","words","around","important","work","creates","place","everyone","expressed","opportunity","enjoyment","shows","theater","provides","food","photography","arts","performing","whatever","communicate","aesthetic","ways","body","comes","kind","without","expressions","evokes","talent","building","word","representation","humanity","freedom","response","expressing","bring","joy","thing","perspective","either","making","much","definition","oneself","reflection","define","looking","someones","value","first","stop","design","roosevelt","gives","process","happiness","interpretation","eyes","expresses","spoken","space","craft","inspires","selfexpression","heart","existence","seen","meant","moves","reaction","speak","helps","thinking","typically","works","piece","act","nothing","meaning","viewer","group","artistic","architecture","don’t","seeing","friday","sound","view","designed","purpose","vision","anyone","really","including","audience","show","necessary","jewelry","various","provoking","relax","experienced","hear","story","creatively","answer","goes","now","mundane","paint","need","use","depth","invokes","interesting","fashion","humans","outlet","mental","evoke","perfect","may","essential","happy","bad","want","lot","engaging","opportunities","escape","everyday","creations","broad","pleasure","touch","drawing","speaks","moment","done","invoke","home","spaces","look","sensory","visually","poetry","diverse","intended","inspiration","beliefs","defined","action","language","always","question","well","manifestation","put","beyond","manifested","objects","needs","right","speaking","spirit","explore","appreciation","within","add","color","give","dancing","items","used","power","’m","sparks","able","challenges","surroundings","therapy","interest","stirs","else","expressive","fine","watercolor","exploration","statements","boundaries","entire","behind","take","inner","call","special","work’","free","going","high","local","especially","eclectic","understand","creator","statement","relate","film","includes","connects","definitely","mural","phoenix","eye","enjoying","types","row","pleasing","takes","inside","inspire","groups","differently","chance","stories","vulnerability","nice","beer","cocktails","minds","sharing","buy","emotionally","auditory","conversation","exists","galleries","entertaining","concept","consumption","intention","sort","level","sculpting","events","entertainment","communities","know","intent","reality","can’t","reflect","social","truly","imagery","clothes","personally","smile","stimulates","one’s","individuals","exchange","impact","abstract","change","universal","lives","since","provocative","engagement","growth","almost","intellectual","treasure","sustenance","material","nature","someone’s","capitalism","injustices","racism","true","will","affects","musical","written","sacred","provide","interests","appreciated","existing","challenging","spark","alone","dialogue","category","extension","highly","relatable","belonging","collaborative","deeper","interact","character","consciousness","however","paper","limits","stimulate","crap","decay","water","long","context","discussion","outward","attention","book","contributes","distinction","honest","proposal","thoughtprovoking","‘work’","learning","away","buying","favorite","festivals","method","lifestyle","stimulation","elses","movement","great","invites","culinary","artifacts","become","uses","development","celebration","consumed","importantly","meaningless","sculptures","traditional","usually","belief","politics","holiness","taste","back","exhibits","gardens","parks","reflects","taken","ears","consideration","sees","identity","idealized","personality","experiencing","overall","concerts","meet","painters","park","sale","street","venues","combined","city","promote","following","bringing","drawings","happenings","outside","prints","enriches","admire","vibes","installations","type","beholder","audio","physically","intriguing","collectively","accessible","inspired","describes","endeavors","contemporary","aesthetics","passions","performances","pieces","provoke","present","short","ever","issues","appreciate","’re","interpret","wrong","cultures","else’s","individual’s","engage","observer","sewing","enhances","history","upon","tap","individuality","provokes","survey","viewpoints","crafts","perception","hands","explain","wonder","folks","mentally","experiential","pretty","livelihood","communicates","spiritual","exist","still","economic","quality","topic","please","displays","lol","persons","goods","message","believe","graffiti","changes","bar","places","small","solely","specific","stress","condition","wants","technique","breadth","economy","restaurants","big","society","though","try","clothing","livens","waves","job","catalyst","concepts","conduit","empathy","sensitivity","argue","changing","constantly","difficult","evolving","colors","impossible","seem","stimulating","minded","impart","life’s","certain","trigger","zeitgeist","perceive","based","photos","america","apart","basquiats","continue","diaz","doc","feelingsemotionsstrugglesexperiences","focused","goal","late","loudly","misogyny","obligation","oppression","real","safe","said","spend","strife","tear","teen","times","voice","years","forgotten","expands","collaboration","deep","knowing","projects","enrich","visuals","old","recycling","application","focus","hope","primarily","producing","build","strong","previously","career","second","cave","respite","represent","beautifies","deeply","pleasant","notice","willing","collective","god","gods","humanitys","pleases","allowed","masses","goodwill","moving","offering","completely","describe","aspect","awareness","bearable","elevates","enables","evolution","expansive","perspectives","potential","raise","shift","acrylic","botanicals","adventure","excited","exploring","imagine","offers","main","occupation","read","richness","aquarium","basketballs","disgust","epitomy","floating","full","half","ideally","longwinded","nostril","powerful","races","reason","seriously","snapshot","talented","three","tired","whole","wld","audibly","profession","togetherness","dialog","induce","communicating","modality","appropriately","better","breathtaking","care","dated","deserves","deserving","discard","encourages","extraordinary","fact","glaser","inception","inundated","landscape","milton","modest","name","poster","pushes","remains","replace","rug","say","sidewalk","simple","stencil","title","ugly","unfortunately","zero","‘art’","‘bad","‘good","‘great","conditionexperience","activity","innovative","consign","network","participate","cathartic","accept","ceramic","failures","greatness","growing","highest","joys","everyone’s","exhibitsmuseumsgalleriesconcerts","female","methods","potteryfilmmusic","preferred","school","walked","went","projected","adventures","immerse","patterns","digesting","finding","views","visualized","encores","stimuli","struggle","boring","best","points","amazement","gifts","beautify","income","presented","simply","thoughtfulness","decent","probably","examine","influence","artwork","basic","discovery","manifests","principles","suitable","alley","ambience","drink","location","restaurantbar","served","walls","consumes","easel","films","games","kept","participation","plays","video","emotionality","collect","hiking","passionate","happened","intentional","beautification","sensual","capable","creatives","installation","visible","feels","memory","candy","grant","promoting","watching","writing","talents","artsmusic","teacher","theatre","elicits","inspiring","euphoric","stepping","desire","actions","elicit","intentionally","open","performedcomposeddeveloped","authentic","thinks","iife","purposes","sometimes","aesthetically","communal","enjoyed","conveyed","matter","viewerparticipant","little","showcases","contemplate","experimental","dives","five","loud","measure","triggers","interactivity","verb","figure","replication","strengths","trying","weaknesses","merry","stay","tension","available","blowing","classes","displaying","fairs","glass","meetups","onsite","outdoor","rent","rooms","sawdust","studio","studios","tours","“checkout”","lived","result","lifeblood","reactions","involvement","private","utilizing","constraints","art—paintings","association","collages","dances","indulging","insides","photographs","poems","songs","trust","outsider","pushing","relations","religion","encompassing","muralsstreet","terms","anothers","personarea","uniqueness","cosmos","showing","knitting","stitching","doesn’t","metaphorically","individually","addition","fixed","beaded","musically","appeal","graphic","installed","sorts","garbage","imho","pretentious","weathered","mostly","break","norm","desires","external","internal","buildings","sides","broadest","creationmaking","critical","lead","selfreflection","dazzles","applies","future","gripping","past","representative","wildly","transports","evidence","natural","mode","lens","person’s","huge","putting","final","product","appealing","personalized","varying","observeconsumeenjoy","cool","corporate","“person”","ads","curated","landscaping","light","metro’s","obvious","rail","valley","wraps","attractive","critiques","heal","ponder","questions","engages","honestly","grounds","photograph","wether","conceptions","puts","education","multiculturalism","invention","item","enjoyable","monetary","require","transaction","output","values","play","effort","repetition","practice","intersection","object","viewersparticipants","discover","mission","southwest","skills","coming","sight","muralspaintings","aligned","prefer","simplify","concert","interactive","peoples","connections","educate","hopefully","inform","depend","redefine","voices","content","teaches","communicative","non","acting","infusing","might","numbers","original","realize","“art","comedy","aspirations","channelling","odd","resonate","commodity","format","production","multiple","embrace","knowledge","streets","whispers","bookmaking","circus","literary","print","storytelling","zines","“art”","encultured","equally","extent","parts","meets","draws","pour","floor","mail","thrown","environment","temperament","pointing","symbols","plane","portraying","sensations","spirits","displayed","mindfully","sake","fulfilling","motivates","articles","homemade","abstractions","smell","reacts","censorship","minus","include","persuasion","activities","artworks","author’s","engaged","imaginative","performed","range","technical","museums","artlink","arts”","borders","fulfill","function","maybe","move","palatable","popular","promoted","studiofine","thru","uncomfortable","wall","“","“instagrammable”","“pretty”","test","withstood","networking","appreciating","choice","additional","adds","placed","teaching","tend","therapeutic","fully","propels","components","comprised","factors","historical","informed","felt","sensation","six","transformed","shares","decoration","dimension","fantastic","scupture","consumer","feeds","least","prove","reverence","spiritually","strength","actually","deliberately","desert","exhibition","grouping","happens","irrelevant","museum","path","rocks","side","deem","expensive","interested","mean","preservingsaving","valuable","worth","pause","strongly","subject","commercial","common","firms","homes","evoking","visceral","yet","surprising","flowing","fuel","keep","cloned","touches","state","discussed","grabs","heck","colorful","seasoning","causes","admiring","inventive","theatrical","vehicle","force","messaging","communicationetc","solid","members","money","pornography","staring","conveys","awe","intangible","produce","erase","let’s","welcome","mindset","magic","justice","guest","reading","speakers","talking","current","designs","stale","across","limitless","day","everywhere","found","throughout","apartment","chooses","corner","happen","installs","longer","pushed","salon","already","area","displace","families","gentrifying","increase","neighborhoods","rents","respecting","businesses","supporting","hobbies","cheap","condos","dollar","flooded","market","relieve","get","pace","regulate","point","analysis","political","daily","savor","showcase","participant","atmosphere","awesome","hearing","comport","intellect","causing","motion","emotive","head","viewers","routine","consumerviewer","pov","center","detroit","grew","verbal","skillset","masse","promotes","dewey’s","theory","ecosystems","godhead","man","premiere","revealed","urban","influences","explores","surrounds","convey","monetarily","exposing","extraction","innermost","stuff","yknow","visualauditorysensory","bars","dynamic","mid","replaced","services","shops","supports","observers","inspirational","among","fit","friends","often","therefore","general","numerous","vibe","fingernails","matters","flowers","trees","deemed","dancepainting","sculpturesmusicfilms","freeing","inward","even","thoughtsfeelings","connecting","tissue","watch","companies","locals","nonlarge","posters","meaningful","case","cases","access","ask","everyones","example","immersive","key","liked","never","manner","purposeful","holds","significant","share","via","today","combination","given","instruments","interpretations","lyrical","materials","uplifting","formats","respectfully","infinite","nearly","taking","viewpoint","threw","oversized","plants","“potted”","fun","bonds","spread","higher","intellectually","simulates","assholes","bunch","entitled","night","walking","challenge","constructed","reconstructed","support","telling","college","degree","instrumental","related","stupid","display","genuine","tell","template","prevention","primary","thriving","composing","cooking","turn","behold","delight","wife","beings","hard","worked","flare","list","table","array","abundance","blocks","circle","continents","covid","devastating","harsh","hence","immediate","keeps","lost","moments","realities","struggles","tells","multi","life—food","treatment","influenced","dreams"],"freq":[322,251,101,85,85,71,57,51,46,45,42,42,40,40,40,35,33,33,32,31,30,30,30,28,27,25,24,24,24,24,24,23,23,23,22,22,22,21,21,19,19,18,18,18,17,16,16,16,15,15,15,15,14,14,14,14,14,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,11,11,11,11,11,11,11,11,11,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"#26213F","minSize":0,"weightFactor":0.894409937888199,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
 <p><br></p>
 </div>
 <div id="sentiment-analysis" class="section level2">
@@ -583,13 +549,13 @@ $(document).ready(function () {
 <p><br><br><br></p>
 <div id="session-info" class="section level3">
 <h3>Session Info</h3>
-<pre><code>## R version 4.0.3 (2020-10-10)
+<pre><code>## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-apple-darwin17.0 (64-bit)
 ## Running under: macOS Catalina 10.15.7
 ## 
 ## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -599,24 +565,23 @@ $(document).ready(function () {
 ## 
 ## other attached packages:
 ## [1] tidyr_1.1.3      tidytext_0.3.1   sentimentr_2.7.1 wordcloud2_0.2.1
-## [5] tm_0.7-8         NLP_0.2-1        ggplot2_3.3.3    dplyr_1.0.5     
+## [5] tm_0.7-8         NLP_0.2-1        ggplot2_3.3.3    dplyr_1.0.6     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] textshape_1.7.1   tidyselect_1.1.0  xfun_0.23         slam_0.1-48      
-##  [5] purrr_0.3.4       lattice_0.20-41   colorspace_2.0-0  vctrs_0.3.6      
+##  [1] textshape_1.7.3   tidyselect_1.1.1  xfun_0.23         slam_0.1-48      
+##  [5] purrr_0.3.4       lattice_0.20-44   colorspace_2.0-1  vctrs_0.3.8      
 ##  [9] generics_0.1.0    htmltools_0.5.1.1 SnowballC_0.7.0   yaml_2.2.1       
-## [13] utf8_1.1.4        rlang_0.4.10      syuzhet_1.0.6     pillar_1.6.0     
-## [17] textclean_0.9.3   glue_1.4.2        withr_2.4.1       DBI_1.1.1        
-## [21] lexicon_1.2.1     lifecycle_1.0.0   stringr_1.4.0     munsell_0.5.0    
-## [25] gtable_0.3.0      htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2   
-## [29] qdapRegex_0.7.2   knitr_1.33        parallel_4.0.3    fansi_0.4.2      
-## [33] highr_0.8         tokenizers_0.2.1  Rcpp_1.0.6        scales_1.1.1     
-## [37] jsonlite_1.7.2    farver_2.0.3      digest_0.6.27     stringi_1.5.3    
-## [41] grid_4.0.3        cli_2.4.0         tools_4.0.3       magrittr_2.0.1   
-## [45] tibble_3.1.0      janeaustenr_0.1.5 crayon_1.4.1      pkgconfig_2.0.3  
-## [49] ellipsis_0.3.1    Matrix_1.2-18     data.table_1.13.6 xml2_1.3.2       
-## [53] rstudioapi_0.13   assertthat_0.2.1  rmarkdown_2.6     R6_2.5.0         
-## [57] compiler_4.0.3</code></pre>
+## [13] utf8_1.2.1        rlang_0.4.11      syuzhet_1.0.6     pillar_1.6.1     
+## [17] textclean_0.9.3   glue_1.4.2        withr_2.4.2       lexicon_1.2.1    
+## [21] lifecycle_1.0.0   stringr_1.4.0     munsell_0.5.0     gtable_0.3.0     
+## [25] htmlwidgets_1.5.3 evaluate_0.14     labeling_0.4.2    qdapRegex_0.7.2  
+## [29] knitr_1.33        parallel_4.1.0    fansi_0.5.0       highr_0.9        
+## [33] tokenizers_0.2.1  Rcpp_1.0.6        scales_1.1.1      jsonlite_1.7.2   
+## [37] farver_2.1.0      digest_0.6.27     stringi_1.6.2     grid_4.1.0       
+## [41] cli_2.5.0         tools_4.1.0       magrittr_2.0.1    tibble_3.1.2     
+## [45] janeaustenr_0.1.5 crayon_1.4.1      pkgconfig_2.0.3   ellipsis_0.3.2   
+## [49] Matrix_1.3-3      data.table_1.14.0 xml2_1.3.2        rmarkdown_2.8    
+## [53] R6_2.5.0          compiler_4.1.0</code></pre>
 </div>
 </div>
 
@@ -647,7 +612,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
