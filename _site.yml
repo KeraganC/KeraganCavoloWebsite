@@ -8,8 +8,6 @@ navbar:
       href: Links.html
     - text: "Project 1"
       href: rrad_portfolio.html
-    - text: "Dashboard 1"
-      href: dashboard_1.html
 output_dir: "docs"
 output:
   html_document:
