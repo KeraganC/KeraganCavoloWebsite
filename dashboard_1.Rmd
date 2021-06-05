@@ -10,5 +10,8 @@ I created this dashboard using a subset of the Roosevelt Row Arts District datas
 
 <br>
 
+
+[CLICK HERE IF NOTHING LOADS BELOW](https://public.tableau.com/views/ThePeopleoftheRooseveltRowArtsDistrict/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
+
 <iframe src="https://public.tableau.com/views/ThePeopleoftheRooseveltRowArtsDistrict/Dashboard1?:showVizHome=no&:embed=true"
  width="645" height="955"></iframe>
