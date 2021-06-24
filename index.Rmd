@@ -18,11 +18,23 @@ output: html_document
 
 ------------------
 
-Human potential knows no bounds. Mounds of research support that humans are resilient, capable, and malleable. Psychology, health & well-being, and self-actualization have always captivated me. 
+Human potential knows no bounds. Mounds of research support humans’ potential for resilience, malleability, and efficacy. Striving for goals that are in line with our values results in a more fulfilled and connected life. Data supports - and I believe is a prerequisite for - this.
 
-I am motivated by data-driven insights. My passion is to bridge the gap between data and health & wellness. I want to push forward individual, organizational, and community health & well-being through the power of data storytelling, visualization, and actionable insights. 
+Life can be difficult, but data offers us insight into the root causes of suffering and can be leveraged in developing strategies for managing life’s ups and downs. My passion lies in bridging the gap between data and social-emotional health & well-being. I want to push forward individual, organizational, and community wellness through the power of data and innovation.
 
-A need for continuous growth is central to my success and sanity. I have grown my skills in research, data analytics, leadership, collaboration, social media management, writing, and speaking. In my spare time, you can find me taking an online course to enhance my technical skills, listening to data analytics and psychology podcasts, or reading.
+I have over four years of experience with data analytics in psychology, digital marketing, and the non-profit sector. My experience includes: 
+1) Developing and conducting quantitative and qualitative studies 
+2) Using SPSS, R, Microsoft Excel/Google Sheets, and Tableau for hypothesis testing, exploratory analysis, correlations, linear regression, and mixed-methods ANOVA 
+3) Presenting findings and action items to stakeholders
+
+In my current role at Special Olympics Arizona, we have grown our social media following by 133% due to our data-driven strategy.
+
+Also, check out The xSELerate Positivity Podcast to hear me talk with mental health professionals and SEL experts about evidence-based strategies for enhancing your self-awareness, relationship skills, decision-making skills, and more! 
+
+[Listen on Apple Podcasts](https://podcasts.apple.com/us/podcast/the-xselerate-positivity-podcast/id1565882491)
+[Spotify](https://open.spotify.com/show/0wkN9GcwDGESai4XbVcYmE?si=lll-FwrORWq7J3kBkJ52IA&dl_branch=1)
+
+In my spare time, you can find me hanging out with my dogs, taking an online course to enhance my technical skills, listening to data analytics and psychology podcasts, or reading.
 
 ------------------
 
