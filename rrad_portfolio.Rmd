@@ -129,7 +129,7 @@ ggplot(rrad_data, aes(x=days_spent_here_month)) +
   labs(x = "Days Spent in the District", y = "Number of Respondents", title = "Fig. A: Days Spent in the District Each Month (N = 1081)")
 ```
 
-*Note: may need to transform due to non-normal distribution*
+*Majority of people spend less than 10 days in the district, however a substantial amount also spend every day in the district (these are likely the residents in the sample).*
 
 <br>
 
@@ -178,6 +178,7 @@ d_art <- data.frame(word = names(v_art), freq=v_art)
 wordcloud2(data = d_art, size = 1.6, color = "#26213F")
 ```
 
+*On the whole, the respondents perceive art as being creative, involving the senses, a form of self-expression. Many people noted that art could be anything, or something that elicits a feeling.*
 
 <br>
 
@@ -206,7 +207,7 @@ ggplot(rrad_data, aes(x=ave_sentiment)) +
 ```
 
 *Highly skewed - Many responses contained zero sentiment, with remaining appearing to be mostly positive.*
-*Note: 0 = no sentiment, >0 = positive sentiment, <0 = negative sentiment.*
+*Note: 0.0 = no sentiment, >0.0 = positive sentiment, <0.0 = negative sentiment.*
 
 Explore summary statistics for average sentiment variable:
 ```{r message=FALSE, warning=FALSE}
@@ -254,18 +255,18 @@ ggplot(rrad_data, aes(x=days_spent_here_month)) +
 Visualize relationship between days spent in the district and sentiment in 'What is Art to You' responses:
 ```{r}
 ggplot(rrad_data, aes(days_spent_here_month, ave_sentiment)) +
-  geom_point(color = '#26213F') +
+  geom_jitter(color = '#26213F') +
   theme_classic() + 
   labs(title = "Fig. E: Days Spent in the District Versus and Feelings about Art", x = "Number of Days Spent in District Each Month", y = "Average Sentiment in Art Reflections")
 ```
 
-*Based on this graph, there does not appear to be a relationship between days spent in the district and average sentiment in individuals' reflections of what art is to them.*
+*Based on this scatter plot, there does not appear to be a strong relationship between days spent in the district and average sentiment in individuals' reflections of what art is to them. However, we do see more instances of negative sentiment in the responses of individuals who spend 10 days or less in the district a month compared to those who spend more than 10 days in the district each month.*
 
 <br><br>
 
 ### Spearman Rho Correlation
 
-The figures above demonstrate non-linearity, a high level of skewness in both variables, and potential outliers in the average sentiment variable. As such, I will use the Spearman rho correlation as it is robust against outliers and high skew. However, based on Figure D., I am not expecting a significant correlation.
+The figures above demonstrate non-linearity, a high level of skewness in both variables, and potential outliers in the average sentiment variable. As such, I will use the Spearman rho correlation as it is robust against outliers and high skew. However, based on Figure E., I am not expecting a significant correlation.
 
 Run the Spearman Rho Correlation Test
 ```{r}
@@ -282,7 +283,7 @@ The original thought process was that the more days individuals spend in the art
 
 * Perhaps, the majority of people spend time in the district for other types of reasons (e.g., restaurants, night life).
  
-* The vast majority of responses to the 'What is Art to You' question contained 0 sentiment. The nature of this question could be one reason why there was no evidence of a relationship between the number of days spent in the district and sentiment. Specifically, we did not ask respondents how they feel about art, but rather what it means to them. Perhaps if worded differently, there might have been a greater presence of sentiment. 
+* The vast majority of responses to the 'What is Art to You' question contained 0 or positive sentiment. The nature of this question could be one reason why there was no evidence of a relationship between the number of days spent in the district and sentiment. Specifically, we did not ask respondents how they feel about art, but rather what it means to them. Perhaps if worded differently, there might have been a greater presence of sentiment. 
   
 * Selection bias is likely at play - people who completed this survey care about the district and likely already hold positive or neutral feelings about art. Also, it could be that people in general don't hold negative feelings toward art.
 
