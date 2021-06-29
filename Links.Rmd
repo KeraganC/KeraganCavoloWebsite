@@ -2,19 +2,11 @@
 title: "My Background"
 output: html_document
 ---
-```{r include=FALSE}
-install.packages("knitr", repos = "http://cran.us.r-project.org")
-```
-```{r include=FALSE}
-library(knitr)
-```
+
 
 <br>
 
+<center>
+![](images/resume1 copy.png)
 
-```{r, fig.align="center", fig.cap=c("Resume"), echo=FALSE}
-knitr::include_graphics("images/resume1.pdf")
-```
-
-
-[Resume Link](https://www.canva.com/design/DAEfneBAdFI/HBajED2uyuB4Gs1C3AR39w/view?utm_content=DAEfneBAdFI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+[Resume link if it doesn't load above](https://www.canva.com/design/DAEfneBAdFI/HBajED2uyuB4Gs1C3AR39w/view?utm_content=DAEfneBAdFI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
