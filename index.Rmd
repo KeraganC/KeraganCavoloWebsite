@@ -26,7 +26,7 @@ I have over four years of experience with data analytics in psychology, digital 
 
 1) Developing and conducting quantitative and qualitative studies 
 
-2) Using SPSS, R, Microsoft Excel/Google Sheets, and Tableau for hypothesis testing, exploratory analysis, correlations, linear regression, and mixed-methods ANOVA 
+2) Using R, Microsoft Excel/Google Sheets, SPSS, and Tableau for hypothesis testing, exploratory analysis, correlations, linear regression, and mixed-methods ANOVA 
 
 3) Presenting findings and action items to stakeholders
 
